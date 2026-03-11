@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kesavareddy – DevOps Engineer Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #6366f1;
+      --accent2: #8b5cf6;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #ffffff;
+      --tag-bg: #f1f5f9;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* ── Page wrapper ── */
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 56px;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+
+    .header-left h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-left .role {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .header-right a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 26px;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Summary ── */
+    .summary p {
+      color: #334155;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* ── Experience ── */
+    .exp-item {
+      margin-bottom: 20px;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .exp-role {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .exp-company {
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .exp-period {
+      font-size: 12px;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      white-space: nowrap;
+    }
+
+    .exp-item ul {
+      margin-top: 8px;
+      padding-left: 16px;
+    }
+
+    .exp-item ul li {
+      font-size: 12.5px;
+      color: #334155;
+      margin-bottom: 4px;
+    }
+
+    .exp-item ul li::marker {
+      color: var(--accent);
+    }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .skill-group {
+      background: var(--tag-bg);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+
+    .skill-group-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 5px;
+    }
+
+    .skill-group p {
+      font-size: 12px;
+      color: #334155;
+    }
+
+    /* ── Projects ── */
+    .project-item {
+      margin-bottom: 14px;
+    }
+
+    .project-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .project-name span {
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 12px;
+      margin-left: 6px;
+    }
+
+    .project-desc {
+      font-size: 12.5px;
+      color: #334155;
+      margin-top: 3px;
+    }
+
+    /* ── Certifications ── */
+    .cert-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cert-badge {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .cert-badge .issuer {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 11px;
+      display: block;
+    }
+
+    /* ── Education ── */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .edu-deg {
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .edu-school {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .edu-year {
+      font-size: 12px;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ── Print styles ── */
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px; }
+      .header { flex-direction: column; gap: 12px; }
+      .header-right { text-align: left; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .cert-list { flex-direction: column; }
+      .exp-header { flex-direction: column; gap: 2px; }
+    }
+
+    @media print {
+      body { font-size: 12px; }
+      .page { padding: 32px 40px; max-width: 100%; }
+      a { color: var(--accent) !important; text-decoration: none; }
+    }
+
+    /* ── Download bar (screen only) ── */
+    .download-bar {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+      font-weight: 500;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .download-bar a {
+      background: #fff;
+      color: #6366f1;
+      border-radius: 6px;
+      padding: 4px 14px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 12px;
+      transition: opacity 0.2s;
+    }
+
+    .download-bar a:hover { opacity: 0.85; }
+
+    @media print {
+      .download-bar { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Download bar (visible on screen, hidden when printing) -->
+  <div class="download-bar">
+    📄 To save as PDF: use your browser's print dialog &nbsp;|&nbsp;
+    <a href="javascript:window.print()">🖨️ Print / Save as PDF</a>
+    <a href="index.html">← Back to Portfolio</a>
+  </div>
+
+  <div class="page">
+
+    <!-- ══ HEADER ══ -->
+    <header class="header">
+      <div class="header-left">
+        <h1>Kesavareddy</h1>
+        <p class="role">// DevOps Engineer &amp; Cloud Infrastructure Specialist</p>
+      </div>
+      <div class="header-right">
+        <div>📍 India &nbsp;·&nbsp; Open to Remote / On-site</div>
+        <div>✉️ <a href="mailto:kesava@example.com">kesava@example.com</a></div>
+        <div>🔗 <a href="https://linkedin.com/in/kesava" target="_blank">linkedin.com/in/kesava</a></div>
+        <div>🐙 <a href="https://github.com/kesava" target="_blank">github.com/kesava</a></div>
+      </div>
+    </header>
+
+    <!-- ══ SUMMARY ══ -->
+    <section class="section summary">
+      <h2 class="section-title">Professional Summary</h2>
+      <p>
+        Results-driven <strong>DevOps Engineer</strong> with 3+ years of experience architecting cloud-native infrastructure
+        and building automation pipelines that ship software from commit to production in minutes.
+        Specialized in <strong>Kubernetes</strong>, <strong>AWS/Azure/GCP</strong>, <strong>CI/CD pipelines</strong>,
+        and <strong>Infrastructure as Code</strong>. Proven track record of reducing deployment times,
+        cutting cloud costs, and achieving 99.9%+ uptime SLAs across production systems.
+      </p>
+    </section>
+
+    <!-- ══ EXPERIENCE ══ -->
+    <section class="section">
+      <h2 class="section-title">Work Experience</h2>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">DevOps Engineer</span> &nbsp;·&nbsp;
+            <span class="exp-company">Tech Company</span>
+          </div>
+          <span class="exp-period">2023 – Present &nbsp;·&nbsp; Full-time</span>
+        </div>
+        <ul>
+          <li>Led migration of 50+ services to Kubernetes (EKS), achieving <strong>99.9% uptime SLA</strong>.</li>
+          <li>Designed GitOps workflows with ArgoCD, reducing deployment cycle time from hours to minutes.</li>
+          <li>Implemented comprehensive monitoring with Prometheus + Grafana across all production services.</li>
+          <li>Reduced AWS monthly costs by <strong>35%</strong> through rightsizing and reserved instance management.</li>
+          <li>Automated infrastructure provisioning with Terraform, enabling environment setup in under 30 minutes.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">Junior DevOps Engineer</span> &nbsp;·&nbsp;
+            <span class="exp-company">Another Company</span>
+          </div>
+          <span class="exp-period">2022 – 2023 &nbsp;·&nbsp; Full-time</span>
+        </div>
+        <ul>
+          <li>Built and maintained Jenkins CI/CD pipelines for 20+ microservices, cutting release overhead by 60%.</li>
+          <li>Containerized legacy applications using Docker, dramatically reducing deployment friction.</li>
+          <li>Set up centralized logging with ELK Stack across production systems for faster incident diagnosis.</li>
+          <li>Automated routine AWS operations with Bash and Python scripts, saving 10+ hours/week.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">Cloud Infrastructure Intern</span> &nbsp;·&nbsp;
+            <span class="exp-company">Startup</span>
+          </div>
+          <span class="exp-period">2021 – 2022 &nbsp;·&nbsp; Internship</span>
+        </div>
+        <ul>
+          <li>Assisted in designing and managing AWS cloud infrastructure for production workloads.</li>
+          <li>Wrote Bash and Python automation scripts for routine operational tasks.</li>
+          <li>Participated in on-call rotations and contributed to incident response runbooks.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══ SKILLS ══ -->
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-name">☁️ Cloud Platforms</div>
+          <p>AWS (EC2, EKS, S3, IAM, Lambda, CloudFront), Azure, GCP</p>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">☸️ Containers &amp; Orchestration</div>
+          <p>Docker, Kubernetes, Helm, Istio, EKS, AKS, ArgoCD</p>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">🔁 CI/CD Pipelines</div>
+          <p>Jenkins, GitHub Actions, GitLab CI, Azure DevOps, Spinnaker</p>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">🏗️ Infrastructure as Code</div>
+          <p>Terraform, Ansible, CloudFormation, Pulumi, Chef</p>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">📊 Monitoring &amp; Observability</div>
+          <p>Prometheus, Grafana, ELK Stack, Datadog, Jaeger, PagerDuty</p>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">🐍 Scripting &amp; Databases</div>
+          <p>Bash, Python, PowerShell, PostgreSQL, Redis, MongoDB</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ KEY PROJECTS ══ -->
+    <section class="section">
+      <h2 class="section-title">Key Projects</h2>
+
+      <div class="project-item">
+        <div class="project-name">Kubernetes Auto-Scaling Platform <span>— EKS · KEDA · Istio · Terraform</span></div>
+        <p class="project-desc">Production-grade EKS cluster with KEDA-based auto-scaling and full Istio service mesh. Reduced infrastructure costs by <strong>40%</strong> through intelligent node auto-provisioning while maintaining 99.9% uptime.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-name">Unified Monitoring &amp; Alerting Platform <span>— Prometheus · Grafana · ELK · Alertmanager</span></div>
+        <p class="project-desc">Centralized observability platform across 15+ microservices with SLO/SLA dashboards. Reduced Mean Time To Recovery (MTTR) by <strong>55%</strong>.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-name">GitOps CI/CD Pipeline <span>— ArgoCD · GitHub Actions · Helm</span></div>
+        <p class="project-desc">End-to-end GitOps workflow for 30+ microservices with automated testing, security scanning, and blue-green deployments. Achieved <strong>zero-downtime</strong> production deployments.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-name">Multi-Cloud Terraform Module Library <span>— Terraform · AWS · Azure</span></div>
+        <p class="project-desc">Reusable module library for provisioning cross-cloud infrastructure, cutting new environment setup time from <strong>days to under 30 minutes</strong>.</p>
+      </div>
+    </section>
+
+    <!-- ══ CERTIFICATIONS ══ -->
+    <section class="section">
+      <h2 class="section-title">Certifications</h2>
+      <div class="cert-list">
+        <div class="cert-badge">
+          AWS Certified Solutions Architect – Associate
+          <span class="issuer">Amazon Web Services</span>
+        </div>
+        <div class="cert-badge">
+          Certified Kubernetes Administrator (CKA)
+          <span class="issuer">CNCF</span>
+        </div>
+        <div class="cert-badge">
+          HashiCorp Certified: Terraform Associate 003
+          <span class="issuer">HashiCorp</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ EDUCATION ══ -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-item">
+        <div>
+          <div class="edu-deg">Bachelor of Technology – Computer Science &amp; Engineering</div>
+          <div class="edu-school">University, India</div>
+        </div>
+        <span class="edu-year">2017 – 2021</span>
+      </div>
+    </section>
+
+  </div><!-- /page -->
+</body>
+</html>
