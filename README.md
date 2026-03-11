@@ -1,24 +1,7 @@
-# Kesava | DevOps Engineer Portfolio
+# Hi, I'm Kesavareddy 👋
 
-A modern, professional DevOps Engineer portfolio website featuring:
+**DevOps Engineer** · Cloud Infrastructure · CI/CD · Kubernetes
 
-- 🌑 Dark theme with glassmorphism effects
-- ✨ Canvas particle network animation (hero)
-- ⌨️ Typed text effect & animated terminal
-- 📊 Animated skill bars and counters
-- 📱 Fully responsive design
-- 🚀 Smooth scroll-reveal animations
-
-## Sections
-- Hero — animated particle background, terminal widget
-- About — profile photo, floating tech badges
-- Skills — 6 categories, animated competency bars
-- Projects — featured project cards with impact metrics
-- Experience — career timeline + certifications
-- Contact — social links + contact form
-
-## Tech Stack
-HTML · CSS (Vanilla) · JavaScript (Vanilla)
-
-## Live Site
-🔗 [kesava6451.github.io/kesava6451](https://kesava6451.github.io/kesava6451)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kesavareddy-savanam-b334563a6/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-6366f1?logo=github)](https://kesava6451.github.io/portfolio/)
+[![Gmail](https://img.shields.io/badge/Email-kesavasavanam@gmail.com-red?logo=gmail&logoColor=white)](mailto:kesavasavanam@gmail.com)
